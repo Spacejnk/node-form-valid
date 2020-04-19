@@ -1,0 +1,23 @@
+{
+  "name": "node-form-valid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spacejnk/node-form-valid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spacejnk/node-form-valid/issues"
+  },
+  "homepage": "https://github.com/Spacejnk/node-form-valid#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
