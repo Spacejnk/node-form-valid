@@ -8,42 +8,19 @@
     <title>form-valid</title>
 </head>
 <body>
-    <h1>Front Page</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum debitis quidem quasi, esse vel iste inventore <br> quis nemo ea consequatur quas, nobis culpa ratione sunt, voluptas maxime. <br> Facilis illo placeat ipsum quaerat ullam quam sapiente eveniet, nemo enim quis.</p>
-    <div>
+    <section class="container">
         <form action="/" method="POST" id="form">
-            <div class="form-group smaller-box">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <div class="form-group smaller-box">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password"> 
-            </div>
-            <div class="col-md-4 center-block x text-center">
-            <button class="btn btn-primary smaller-btn" type="submit">Submit</button>
+            <div>
+                <div class="label">
+                    <label for="">Name</label>
+                </div>
+                <div class="input">
+                    <input type="text" name="name" id="" placeholder="name">
+                </div>
             </div>
         </form>
-    </div>
-
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="/public/js/main.js"></script>
-    <script>
-        $(document).ready(()=> {
-            $('#form').submit((e)=> {
-                e.preventDefault();
-                $.ajax({
-                    url : '/',
-                    type : 'post',
-                    contentType : 'application/json',
-                    data : JSON.stringify($('#form').serializeArray()),
-                    success : (response) => {
-                        console.log('successfully got response');
-                        console.log(response);
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
