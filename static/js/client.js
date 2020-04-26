@@ -13,6 +13,7 @@ function sendData(e) {
         },
         body: JSON.stringify({
             name: formData.get('name'),
+            email: formData.get('email')
         }),
         method: "POST"
     }
@@ -20,7 +21,22 @@ function sendData(e) {
     fetch('http://localhost:3005/formData', Params)
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+
+        if (data.success === "Ok") {
+            console.log('successful');
+        } else {
+
+        let error = document.querySelector('.error');
+
+        error.innerHTML = "";
+
+        document.querySelector('.errorContainer').style.display = "block";
+
+        data.errors.forEach(function(err){
+            error.innerHTML += `<ul>${err.msg}</ul>`;
+        });
+        }
+        
         
     })
     .catch(err => console.log(err))
