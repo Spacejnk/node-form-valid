@@ -1,20 +1,22 @@
 const express = require('express');
 const path = require('path');
-
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use('/public', express.static(path.join(__dirname, 'static')));
-// app.use(bodyParser.urlencoded({extended: true}));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+//let urlencoded = bodyParser.urlencoded({extended: false});
+//app.use(urlencoded);
+app.use(bodyParser.json());
 
 
 app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, 'static','/index.html'));
 });
 
-// app.get('/', (req,res) => res.send
-//   ('Testing'));
+app.post('/formData', (req,res) => {
+  console.log(req.body.name);
+});
 
 
 

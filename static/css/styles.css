@@ -4,6 +4,7 @@
   padding: 10px 30px;
   margin: 100px auto;
   width: 85%;
+  position: relative;
 }
 
 input {
@@ -12,4 +13,17 @@ input {
 
 .label {
   margin-bottom: 5px;
+}
+form {
+  margin-bottom: 100px;
+}
+
+.submit {
+  color: #eee;
+  background: #444;
+  padding: 3px 12px;
+  border: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
