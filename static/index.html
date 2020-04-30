@@ -12,6 +12,7 @@
         <div class="errorContainer">
             <ul class="error"></ul>
         </div>
+       
         <form>
             <div class="formRow">
                 <div class="label">
@@ -33,10 +34,35 @@
 
             <div class="formRow">
                 <div class="label">
-                    <label for="">Email</label>
+                    <label for="">Phone</label>
+                </div>
+                <div class="input phone">
+                    <input type="number" name="phone"  placeholder="000">
+                    <span>-</span>
+                    <input type="number" name="phone"  placeholder="000">
+                    <span>-</span>
+                    <input type="number" name="phone"  placeholder="0000">
+                </div>
+            </div>
+
+            <div class="formRow">
+                <div class="label">
+                    <label for="">Zip Code</label>
                 </div>
                 <div class="input">
-                    <input type="email" name="email"  placeholder="email">
+                    <input type="number" name="zipCode"  placeholder="zip code">
+                </div>
+            </div>
+
+            <div class="formRow">
+                <div class="label">
+                    <label for="">Are you over 21?</label>
+                </div>
+                <div class="input">
+                    <label for="">No</label>
+                    <input type="radio" name="age" value="No">
+                    <label for="">Yes</label>
+                    <input type="radio" name="age" value="Yes">
                 </div>
             </div>
 

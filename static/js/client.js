@@ -9,19 +9,25 @@ function sendData(e) {
 
     let Params = {
         headers: {
-            'Content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             name: formData.get('name'),
-            email: formData.get('email')
+            email: formData.get('email'),
+            phone1: formData.get('phone1'),
+            phone2: formData.get('phone2'),
+            phone3: formData.get('phone3'),
+            zipCode: formData.get('zipCode'),
+            age: formData.get('age')
         }),
         method: "POST"
     }
 
     fetch('http://localhost:3005/formData', Params)
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
 
+        
         if (data.success === "Ok") {
             console.log('successful');
         } else {
@@ -31,17 +37,19 @@ function sendData(e) {
         error.innerHTML = "";
 
         document.querySelector('.errorContainer').style.display = "block";
-
+            
         data.errors.forEach(function(err){
-            error.innerHTML += `<ul>${err.msg}</ul>`;
-        });
-        }
+            error.innerHTML += `<li>${err.msg}</li>`;
+            });
+            
         
+        } 
         
     })
+    
     .catch(err => console.log(err))
+      
 }
-
 
 
 
